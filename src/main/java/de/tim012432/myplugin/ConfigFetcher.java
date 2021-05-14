@@ -3,7 +3,7 @@ package de.tim012432.myplugin;
 import cn.nukkit.utils.Config;
 
 /**
- * ConfigFetcher
+ * Class for fetching the plugin configuration.
  */
 public class ConfigFetcher {
 

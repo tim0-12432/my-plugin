@@ -5,7 +5,7 @@ import cn.nukkit.utils.TextFormat;
 import cn.nukkit.event.Listener;
 
 /**
- * MyPlugin
+ * Main class of my plugin.
  */
 public class MyPlugin extends PluginBase implements Listener {
 

@@ -9,6 +9,9 @@ import cn.nukkit.event.player.PlayerLocallyInitializedEvent;
 import cn.nukkit.form.window.FormWindowSimple;
 import cn.nukkit.scheduler.NukkitRunnable;
 
+/**
+ * Event listenenr for my plugin.
+ */
 public class EventListener implements Listener {
     MyPlugin plugin;
 

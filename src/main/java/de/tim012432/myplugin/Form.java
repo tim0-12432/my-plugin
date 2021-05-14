@@ -9,6 +9,9 @@ import cn.nukkit.form.window.FormWindowSimple;
 
 import com.creeperface.nukkit.placeholderapi.api.PlaceholderAPI;
 
+/**
+ * Definition od the welcome form.
+ */
 public class Form {
     private Player player;
     private String title;
