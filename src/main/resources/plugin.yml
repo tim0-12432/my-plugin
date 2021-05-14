@@ -1,0 +1,7 @@
+name: MyPlugin
+main: de.tim012432.myplugin.MyPlugin
+version: "${pom.version}"
+api: ["1.0.9"]
+author: tim0-12432
+description: Standard plugin for my little server
+load: STARTUP
