@@ -1,0 +1,1 @@
+Nukkit Plugin welcomes the player!

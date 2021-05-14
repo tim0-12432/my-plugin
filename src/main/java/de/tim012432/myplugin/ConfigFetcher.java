@@ -9,6 +9,12 @@ public class ConfigFetcher {
 
     public Config pluginConfig;
 
+    public int joinDelay;
+    public String title;
+    public String welcoming;
+    public String text;
+    public String button;
+
     public ConfigFetcher(MyPlugin plugin) {
         plugin.saveDefaultConfig();
         pluginConfig = plugin.getConfig();
@@ -19,6 +25,11 @@ public class ConfigFetcher {
 
         if(pluginConfig.getInt("config-version") != version) {
             if(pluginConfig.getInt("config-version") == 1) {
+                pluginConfig.set("joinDelay", 1);
+                pluginConfig.set("title", "Welcome");
+                pluginConfig.set("welcoming", "Hi");
+                pluginConfig.set("text", "Welcome on this server!");
+                pluginConfig.set("button", "okay");
             } else {
                 plugin.getLogger().warning("MobPlugin's config file is outdated. Please delete the old config.");
                 plugin.getLogger().error("Config error. The plugin will be disabled.");
@@ -29,6 +40,11 @@ public class ConfigFetcher {
             pluginConfig.save();
             plugin.getLogger().notice("Config file updated to version " + version);
         }
+        joinDelay = pluginConfig.getInt("joinDelay");
+        title = pluginConfig.getString("title");
+        welcoming = pluginConfig.getString("welcoming");
+        text = pluginConfig.getString("text");
+        button = pluginConfig.getString("button");
         return true;
     }
 }

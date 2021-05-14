@@ -1,1 +1,10 @@
 config-version: 2
+
+# delay for displaying in seconds
+joinDelay: 1
+
+# text settings for welcome form
+title: "Welcome"
+welcoming: "Hi"
+text: "Welcome to this Server!"
+button: "Okay"
