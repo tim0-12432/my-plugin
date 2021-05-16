@@ -61,15 +61,15 @@ public class EventListener implements Listener {
         Player player = event.getPlayer();
         if (event.getItem().getId() == ItemID.COMPASS && !player.isSpectator()) {
             Position playerPosition = player.getPosition();
-            player.sendChat("x", String.valueOf(playerPosition.x));
-            player.sendChat("y", String.valueOf(playerPosition.y));
-            player.sendChat("z", String.valueOf(playerPosition.z));
+            player.sendChat("x:", String.valueOf(playerPosition.x));
+            player.sendChat("y:", String.valueOf(playerPosition.y));
+            player.sendChat("z:", String.valueOf(playerPosition.z));
         }
     }
 
     /**
      * method for displaying the form.
-     * 
+     *
      * @param player the player instance whom the window should be displayed.
      */
     public void displayForm(Player player) {
