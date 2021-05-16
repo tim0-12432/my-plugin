@@ -14,6 +14,7 @@ import com.creeperface.nukkit.placeholderapi.api.PlaceholderAPI;
  */
 public class Form {
     private Player player;
+    /** display variables. */
     private String title;
     private String welcoming;
     private String text;
@@ -21,6 +22,16 @@ public class Form {
 
     private BiFunction<String, Player, String> placeholderFunc;
 
+    /**
+     * constructor.
+     * 
+     * @param server the nukkit server instance.
+     * @param py the player instance whom the form should be displayed.
+     * @param tt the text for the window title.
+     * @param wc the text as welcoming.
+     * @param tx the text which should be displayed as main content.
+     * @param bt the text on the button.
+     */
     public Form(Server server, Player py, String tt, String wc, String tx, String bt) {
         initPlaceholders(server);
 
@@ -33,6 +44,7 @@ public class Form {
         createForm();
     }
 
+    /** placeholder function initialization. */
     private void initPlaceholders(Server server) {
         if (server.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             placeholderFunc = (s, p) -> PlaceholderAPI.getInstance().translateString(s, p);
@@ -41,6 +53,7 @@ public class Form {
         }
     }
 
+    /** creates the form window. */
     private void createForm() {
         FormWindowSimple form = new FormWindowSimple(
             placeholderFunc.apply(title, player),

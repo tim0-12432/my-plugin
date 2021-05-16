@@ -9,17 +9,20 @@ public class ConfigFetcher {
 
     public Config pluginConfig;
 
+    /** variables defined in the config. */
     public int joinDelay;
     public String title;
     public String welcoming;
     public String text;
     public String button;
 
+    /** constructor. */
     public ConfigFetcher(MyPlugin plugin) {
         plugin.saveDefaultConfig();
         pluginConfig = plugin.getConfig();
     }
 
+    /** initialization method fetching the config file. */
     public boolean init(MyPlugin plugin) {
         int version = 2;
 

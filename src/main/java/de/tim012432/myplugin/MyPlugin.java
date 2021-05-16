@@ -13,15 +13,18 @@ public class MyPlugin extends PluginBase implements Listener {
 
     private static MyPlugin instance;
 
+    /** Getter. */
     public static MyPlugin getInstance() {
         return instance;
     }
 
+    /** creating instance on loading. */
     @Override
     public void onLoad() {
         instance = this;
     }
 
+    /** enabling the plugin. */
     @Override
     public void onEnable() {
         if (!this.getServer().getName().equals("Nukkit")) {
@@ -44,6 +47,7 @@ public class MyPlugin extends PluginBase implements Listener {
         this.getServer().getPluginManager().registerEvents(new EventListener(this), this);
     }
 
+    /** disabling the plugin. */
     @Override
     public void onDisable() {
         this.getLogger().info(TextFormat.GOLD + "MyPlugin disabled!");
