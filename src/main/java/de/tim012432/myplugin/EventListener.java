@@ -61,9 +61,10 @@ public class EventListener implements Listener {
         Player player = event.getPlayer();
         if (event.getItem().getId() == ItemID.COMPASS && !player.isSpectator()) {
             Position playerPosition = player.getPosition();
-            player.sendChat("x:", String.valueOf(playerPosition.x));
-            player.sendChat("y:", String.valueOf(playerPosition.y));
-            player.sendChat("z:", String.valueOf(playerPosition.z));
+            StringBuilder message = new StringBuilder("x: " + formatCoord(playerPosition.x))
+                    .append("\ny: " + formatCoord(playerPosition.y))
+                    .append("\nz: " + formatCoord(playerPosition.z));
+            player.sendTip(message.toString());
         }
     }
 
@@ -75,5 +76,14 @@ public class EventListener implements Listener {
     public void displayForm(Player player) {
         ConfigFetcher config = plugin.config;
         new Form(plugin.getServer(), player, config.title, config.welcoming, config.text, config.button);
+    }
+
+    /**
+     * method for formatting the coordinate data right.
+     * @param coord the player coordinate.
+     * @return the coordinate in the right parsed format.
+     */
+    private String formatCoord(double coord) {
+        return String.valueOf((double) Math.round(coord * 100) / 100);
     }
 }
