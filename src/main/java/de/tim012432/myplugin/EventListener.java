@@ -54,7 +54,7 @@ public class EventListener implements Listener {
         }
     }
 
-    /** handler for interacting with the form. */
+    /** handler for interacting with a compass. */
     @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
     public void onInteract(PlayerInteractEvent event) {
         if (event.getAction() == PlayerInteractEvent.Action.PHYSICAL) return;

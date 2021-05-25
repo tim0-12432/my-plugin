@@ -4,7 +4,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "\"C:\\src\\maven\\apache-maven-3.8.1\\bin\\mvn.cmd\" clean install -U -f \"c:\\Users\\Lenovo\\Documents\\Skripte\\Java\\minecraft\\my-plugin\\pom.xml\"",
+            "command": "\"C:\\src\\maven\\apache-maven-3.8.1\\bin\\mvn.cmd\" clean install checkstyle:checkstyle -U -f \"c:\\Users\\Lenovo\\Documents\\Skripte\\Java\\minecraft\\my-plugin\\pom.xml\"",
             "group": "build"
         }
     ]
