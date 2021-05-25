@@ -20,7 +20,7 @@ jobs:
           java-version: '8'
 
       - name: Maven build
-        run: mvn clean install -f pom.xml
+        run: mvn clean install checkstyle:checkstyle -U -f pom.xml
 
       - name: zip docs
         uses: montudor/action-zip@v1
